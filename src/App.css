@@ -1,0 +1,117 @@
+.app {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header h1 {
+  color: #333;
+}
+
+.header p {
+  color: #666;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.auth-form input, .auth-form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.auth-form button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auth-form button:hover {
+  background-color: #45a049;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px auto;
+  position: relative;
+}
+
+.wheel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 3s ease-out;
+}
+
+.wheel-slice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  transform: rotate(calc(360deg / ${coupons.length}));
+}
+
+.wheel-slice img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coupon-result {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.coupon-result img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 300px; 
+  height: 300px;
+  background-image: url('./images/offers.png'); 
+  background-size: contain;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  animation: spin 3s linear infinite;
+}
+
+.spinner.stop-spinning {
+  animation: none;
+}
